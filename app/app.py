@@ -50,5 +50,7 @@ if uploaded_file is not None:
         predictions = app_function.xray_image(resized_image)
 
         st.write("Predictions:")
-        st.bar_chart(predictions)
+        bar_chart = st.bar_chart(predictions)
+        bar_chart.pyplot.xticks(rotation=45, ha='right')
+        st.pyplot()
 
