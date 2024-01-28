@@ -2,8 +2,10 @@ import streamlit as st
 from PIL import Image
 import app_function 
 import time
+import os
 
-st.sidebar.image("analytica.png", use_column_width=True)
+image_path = os.path.join(os.path.dirname(__file__), 'analytica.png')
+st.sidebar.image(image_path, use_column_width=True)
 st.title("boneX")
 st.subheader("The newest Image Analytica product!")
 st.text("boneX is a x-ray fracture classifier."
