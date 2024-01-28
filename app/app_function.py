@@ -8,7 +8,7 @@ def xray_image(img):
     img_array = np.expand_dims(img_array, axis=0)
     img_array = preprocess_input(img_array)
 
-    model = load_model('best_model_-10.h5')
+    model = load_model('models/best_model_-10.h5')
     predictions = model.predict(img_array)
 
     labels = ['Elbow fracture', 'Fingers fracture', 'Forearm fracture', 'Wrist fracture', 'Humerus Fracture', 'Shoulder fracture']
