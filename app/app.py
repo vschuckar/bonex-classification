@@ -17,6 +17,7 @@ uploaded_file = st.file_uploader("Choose an X-ray image.", type=["jpg", "jpeg", 
 
 if uploaded_file is not None:
     image = Image.open(uploaded_file)
+    resized_image = image.resize((299, 299))
     st.image(image, caption="Uploaded X-ray image.", use_column_width=True)
 
     
