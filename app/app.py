@@ -54,7 +54,7 @@ if uploaded_file is not None:
         #st.bar_chart(predictions)
         fig, ax = plt.subplots()
         bars = ax.bar(predictions.keys(), predictions.values(), color='rosybrown')  
-        ax.set_facecolor('none') 
+        fig.patch.set_alpha(0)
         plt.xticks(rotation=45, ha='right')
         st.pyplot(fig)
 
