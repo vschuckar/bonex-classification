@@ -18,7 +18,7 @@ uploaded_file = st.file_uploader("Choose an X-ray image.", type=["jpg", "jpeg", 
 if uploaded_file is not None:
     image = Image.open(uploaded_file)
     resized_image = image.resize((299, 299))
-    st.image(image, caption="Uploaded X-ray image.", use_column_width=True)
+    st.image(resized_image, caption="Uploaded X-ray image.", use_column_width=True)
 
     
     if st.button("Make predictions!"):
@@ -26,12 +26,12 @@ if uploaded_file is not None:
         'Analysing your image...'
         progress_bar = st.progress(0)
         for percent_complete in range(100):
-            time.sleep(0.03)  
+            time.sleep(0.1)  
             progress_bar.progress(percent_complete + 1)
         'Done!'
 
         
-        predictions = app_function.xray_image(image)
+        predictions = app_function.xray_image(resized_image)
 
         st.write("Predictions:")
         st.bar_chart(predictions)
