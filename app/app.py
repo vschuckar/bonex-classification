@@ -53,7 +53,8 @@ if uploaded_file is not None:
         st.write("Predictions:")
         #st.bar_chart(predictions)
         fig, ax = plt.subplots()
-        bars = ax.bar(predictions.keys(), predictions.values(), color='slategrey')  
+        bars = ax.bar(predictions.keys(), predictions.values(), color='rosybrown')  
+        ax.set_facecolor('none') 
         plt.xticks(rotation=45, ha='right')
         st.pyplot(fig)
 
