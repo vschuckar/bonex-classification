@@ -3,6 +3,7 @@ from PIL import Image
 import app_function 
 import time
 import os
+import matplotlib.pyplot as plt 
 
 image_path = os.path.join(os.path.dirname(__file__), 'analytica.png')
 st.sidebar.image(image_path, use_column_width=True)
@@ -50,7 +51,9 @@ if uploaded_file is not None:
         predictions = app_function.xray_image(resized_image)
 
         st.write("Predictions:")
-        bar_chart = st.bar_chart(predictions)
-        bar_chart.pyplot.xticks(rotation=45, ha='right')
-        st.pyplot()
+        #st.bar_chart(predictions)
+        fig, ax = plt.subplots()
+        bars = ax.bar(predictions.keys(), predictions.values(), color='slategrey')  
+        plt.xticks(rotation=45, ha='right')
+        st.pyplot(fig)
 
