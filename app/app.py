@@ -3,7 +3,7 @@ from PIL import Image
 import app_function 
 import time
 
-st.sidebar.image("/Users/vschuckar/Desktop/data_analytics/Week_9/final_project/analytica.png", use_column_width=True)
+st.sidebar.image("/app/analytica.png", use_column_width=True)
 st.title("boneX")
 st.subheader("The newest Image Analytica product!")
 st.text("boneX is a x-ray fracture classifier."
