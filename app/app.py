@@ -4,6 +4,8 @@ import app_function
 import time
 import os
 import matplotlib.pyplot as plt 
+import altair as alt
+import pandas as pd
 
 image_path = os.path.join(os.path.dirname(__file__), 'analytica.png')
 st.sidebar.image(image_path, use_column_width=True)
@@ -43,7 +45,7 @@ if uploaded_file is not None:
         'Analysing your image...'
         progress_bar = st.progress(0)
         for percent_complete in range(100):
-            time.sleep(0.1)  
+            time.sleep(0.3)  
             progress_bar.progress(percent_complete + 1)
         'Done!'
 
@@ -52,9 +54,19 @@ if uploaded_file is not None:
 
         st.write("Predictions:")
         #st.bar_chart(predictions)
-        fig, ax = plt.subplots()
-        bars = ax.bar(predictions.keys(), predictions.values(), color='rosybrown')  
-        fig.patch.set_alpha(0)
-        plt.xticks(rotation=45, ha='right')
-        st.pyplot(fig)
+        df = pd.DataFrame(list(predictions.items()), columns=['Category', 'Probability'])
+        chart = alt.Chart(df).mark_bar().encode(
+        x=alt.X('Category:N', title=None),
+        y='Probability',
+        tooltip=['Category', 'Probability']
+        ).properties(
+        width=alt.Step(80),
+        height=300
+        ).configure_axis(
+        labelAngle=45,
+         )
+
+        st.altair_chart(chart)
+        
+        
 
