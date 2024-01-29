@@ -3,7 +3,6 @@ from PIL import Image
 import app_function 
 import time
 import os
-import matplotlib.pyplot as plt 
 import altair as alt
 import pandas as pd
 
@@ -51,7 +50,6 @@ if uploaded_file is not None:
         predictions = app_function.xray_image(resized_image)
 
         st.write("Predictions:")
-        #st.bar_chart(predictions)
         df = pd.DataFrame(list(predictions.items()), columns=['Category', 'Probability'])
         chart = alt.Chart(df).mark_bar(color='#6F2727').encode(
         x=alt.X('Category:N', title=None),
