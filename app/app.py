@@ -55,13 +55,13 @@ if uploaded_file is not None:
         st.write("Predictions:")
         #st.bar_chart(predictions)
         df = pd.DataFrame(list(predictions.items()), columns=['Category', 'Probability'])
-        chart = alt.Chart(df).mark_bar().encode(
+        chart = alt.Chart(df).mark_bar(color='#6F2727').encode(
         x=alt.X('Category:N', title=None),
         y='Probability',
         tooltip=['Category', 'Probability']
         ).properties(
-        width=alt.Step(80),
-        height=300
+        width=alt.Step(100),
+        height=400
         ).configure_axis(
         labelAngle=45,
          )
