@@ -60,8 +60,8 @@ if uploaded_file is not None:
         y='Probability',
         tooltip=['Category', 'Probability']
         ).properties(
-        width=alt.Step(100),
-        height=400
+        width=alt.Step(150),
+        height=450
         ).configure_axis(
         labelAngle=45,
          )
