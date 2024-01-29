@@ -54,11 +54,11 @@ if uploaded_file is not None:
         df = pd.DataFrame(list(predictions.items()), columns=['Category', 'Probability'])
         chart = alt.Chart(df).mark_bar(color='#6F2727').encode(
         x=alt.X('Category:N', title=None),
-        y='Probability',
+        y=alt.Y('Probability:Q', scale=alt.Scale(domain=[0, 1])),
         tooltip=['Category', 'Probability']
         ).properties(
         width=alt.Step(100),
-        height=500
+        height= 450
         ).configure_axis(
         labelAngle=45,
          )
