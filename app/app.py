@@ -9,22 +9,31 @@ import pandas as pd
 
 image_path = os.path.join(os.path.dirname(__file__), 'analytica.png')
 st.sidebar.image(image_path, use_column_width=True)
-st.sidebar.title("boneX")
+#st.sidebar.title("boneX")
 #st.sidebar.subheader("The newest Image Analytica product!")
 st.sidebar.markdown(
     """
     <style>
-        .sidebar-text {
-            color: black;  
+        .sidebar-title {
+            font-size: 20px;  
+            font-weight: bold; 
+            font-family: 'Arial', sans-serif;  
+            color: black;
+        }
+        .sidebar-subheader {
+            font-size: 16px;  
+            font-weight: bold;
+            font-family: 'Arial', sans-serif; 
+            color: black;
         }
     </style>
     """,
     unsafe_allow_html=True
 )
 
-# Add text to the sidebar with the specified class
-st.sidebar.markdown('<p class="sidebar-text">The newest Image Analytica product!</p>', unsafe_allow_html=True)
-
+# Add title and subheader to the sidebar with the specified classes
+st.sidebar.title('<p class="sidebar-title">boneX</p>', unsafe_allow_html=True)
+st.sidebar.subheader('<p class="sidebar-subheader">The newest Image Analytica product!</p>', unsafe_allow_html=True)
 
 multiline_text = """
 ### Overview
