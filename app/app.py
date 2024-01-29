@@ -31,8 +31,8 @@ st.sidebar.markdown(
     unsafe_allow_html=True
 )
 
-st.sidebar.title("boneX")
-st.sidebar.subheader("The newest Image Analytica product!")
+st.sidebar.markdown("# boneX")
+st.sidebar.markdown("## The newest Image Analytica product!")
 
 multiline_text = """
 ### Overview
