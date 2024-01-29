@@ -1,19 +1,10 @@
-import os
-import re
-
 import pandas as pd 
 import numpy as np 
 
-import tensorflow as tf
-from keras import preprocessing
-from tensorflow.keras.applications import InceptionV3
-from tensorflow.keras.layers import GlobalAveragePooling2D, Dense, Dropout
-from tensorflow.keras.models import Model, load_model
+from tensorflow.keras.models import load_model
 from tensorflow.keras.preprocessing import image
-from tensorflow.keras.optimizers.legacy import Adam 
 from tensorflow.keras.applications.inception_v3 import preprocess_input
-from tensorflow.keras.preprocessing.image import ImageDataGenerator
-from tensorflow.keras.callbacks import EarlyStopping, ModelCheckpoint, ReduceLROnPlateau
+
 
 def xray_image(img):
     img_array = image.img_to_array(img)
