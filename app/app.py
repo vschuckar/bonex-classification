@@ -14,13 +14,13 @@ st.sidebar.image(image_path, use_column_width=True)
 st.sidebar.markdown(
     """
     <style>
-        .sidebar-title {
+        .sidebar .sidebar-content .block-container .sidebar-title {
             font-size: 20px;  
             font-weight: bold; 
             font-family: 'Arial', sans-serif;  
             color: black;
         }
-        .sidebar-subheader {
+        .sidebar .sidebar-content .block-container .sidebar-subheader {
             font-size: 16px;  
             font-weight: bold;
             font-family: 'Arial', sans-serif; 
@@ -31,9 +31,8 @@ st.sidebar.markdown(
     unsafe_allow_html=True
 )
 
-# Add title and subheader to the sidebar with the specified classes
-st.sidebar.title('<p class="sidebar-title">boneX</p>', unsafe_allow_html=True)
-st.sidebar.subheader('<p class="sidebar-subheader">The newest Image Analytica product!</p>', unsafe_allow_html=True)
+st.sidebar.title("boneX")
+st.sidebar.subheader("The newest Image Analytica product!")
 
 multiline_text = """
 ### Overview
