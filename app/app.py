@@ -9,11 +9,8 @@ import pandas as pd
 
 image_path = os.path.join(os.path.dirname(__file__), 'analytica.png')
 st.sidebar.image(image_path, use_column_width=True)
-#st.sidebar.title("boneX")
-#st.sidebar.subheader("The newest Image Analytica product!")
-
-st.sidebar.markdown(''':black[# boneX]''')
-st.sidebar.markdown(''':black[### The newest Image Analytica product!]''')
+st.sidebar.title("boneX")
+st.sidebar.subheader("The newest Image Analytica product!")
 
 multiline_text = """
 ### Overview
