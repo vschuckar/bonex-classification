@@ -10,10 +10,21 @@ import pandas as pd
 image_path = os.path.join(os.path.dirname(__file__), 'analytica.png')
 st.sidebar.image(image_path, use_column_width=True)
 st.sidebar.title("boneX")
-st.sidebar.subheader("The newest Image Analytica product!")
-#st.sidebar.text("boneX is a x-ray fracture classifier."
-#       "In this first app interaction, boneX classifies upper limbs fractures for its location. In the next releases, it will also find and mark the exact fracture location."
-#           "Upload an X-ray image, and try it now!")
+#st.sidebar.subheader("The newest Image Analytica product!")
+st.sidebar.markdown(
+    """
+    <style>
+        .sidebar-text {
+            color: black;  
+        }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
+
+# Add text to the sidebar with the specified class
+st.sidebar.markdown('<p class="sidebar-text">The newest Image Analytica product!</p>', unsafe_allow_html=True)
+
 
 multiline_text = """
 ### Overview
@@ -60,8 +71,8 @@ if uploaded_file is not None:
         y='Probability',
         tooltip=['Category', 'Probability']
         ).properties(
-        width=alt.Step(150),
-        height=450
+        width=alt.Step(100),
+        height=500
         ).configure_axis(
         labelAngle=45,
          )
