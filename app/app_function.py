@@ -9,7 +9,11 @@ from tensorflow.keras.applications.inception_v3 import preprocess_input
 def xray_image(img):
     '''
     '''
-    img_array = tf.image.grayscale_to_rgb(img)
+    img_array = image.img_to_array(img)
+
+    if img_array.shape[-1] == 1:
+        img_array = np.repeat(img_array, 3, axis=-1)
+        
     img_array = np.expand_dims(image.img_to_array(img_array), axis=0)
     img_array = preprocess_input(img_array)
 
