@@ -9,8 +9,8 @@ from tensorflow.keras.applications.inception_v3 import preprocess_input
 def xray_image(img):
     '''
     '''
-    img_rgb = tf.image.grayscale_to_rgb(image.img_to_array(img))
-    img_array = np.expand_dims(img_rgb, axis=0)
+    img_array = tf.image.grayscale_to_rgb(img)
+    img_array = np.expand_dims(image.img_to_array(img_array), axis=0)
     img_array = preprocess_input(img_array)
 
     model = load_model('models/best_model_-10.h5')
