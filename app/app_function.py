@@ -5,6 +5,7 @@ from tensorflow.keras.models import load_model
 from tensorflow.keras.preprocessing import image
 from tensorflow.keras.applications.inception_v3 import preprocess_input
 
+# function to get an image, transform it to array and RGB (if necessary), preprocess, apply the model and predict the results
 
 def xray_image(img):
     '''
