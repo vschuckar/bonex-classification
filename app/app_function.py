@@ -9,6 +9,10 @@ from tensorflow.keras.applications.inception_v3 import preprocess_input
 
 def xray_image(img):
     '''
+    This is a function to get an image, transform it to array and RGB (if necessary), preprocess, apply the model 
+    and make predictions. 
+    Input: img = image location/path
+    Output: A dictionary with the labels and its predictions
     '''
     img_array = image.img_to_array(img)
 

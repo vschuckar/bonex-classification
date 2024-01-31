@@ -79,7 +79,7 @@ def delete_empty_txt_files(folder_path):
             except Exception as e:
                 print(f"Error deleting {file_path}: {e}")
 
-# creating a function to change the class to another number 
+# creating a function to change the class number to another number 
 
 def rename_images_with_new_class(folder_path, old_class, new_class):
     '''
