@@ -4,6 +4,10 @@ import re
 
 import numpy as np 
 
+import streamlit as st
+import requests
+from io import BytesIO
+
 from tensorflow.keras.preprocessing import image
 from tensorflow.keras.applications.inception_v3 import preprocess_input
 from tensorflow.keras.models import load_model
@@ -136,6 +140,14 @@ def xray_image(img_path, model):
     axes[1].tick_params(axis='x', rotation=45, labelsize=8)
 
     return plt.show()
+
+# function to load a cached model in order to avoid loading the model everytime the app is being used - git LFS bandwidth depletes very fast
+
+@st.experimental_singleton
+def load_cached_model(model_url):
+    response = requests.get(model_url)
+    model_content = BytesIO(response.content)
+    return load_model(model_content)
 
 # function to get an image, transform it to array and RGB (if necessary), preprocess, apply the model and predict the results
 
