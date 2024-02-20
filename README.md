@@ -9,7 +9,7 @@ Original dataset: https://www.kaggle.com/datasets/pkdarabi/bone-fracture-detecti
 ## Introduction 
 
 * Diagnostic errors in medicine, including radiology, indicate inadequate patient care and can vary from minimal to potentially life-threatening.
-* Radiology accounts for a significant number of malpractice claims, with errors in interpretation leading to missed diagnoses in nearly 75% of cases.
+* Radiology accounts for a significant number of malpractice claims, with errors in interpretation leading to missed diagnoses in nearly 75% of cases. [1]
 * Fractures can lead to impaired life quality, disability, health decline, and are a serious economic burden to individuals, their families, societies, and health-care systems. 
 
 In order to aid patient care & support medical diagnostics tools, this dataset will be used to develop a bone fracture classification & detection model. 
@@ -70,4 +70,6 @@ Below a summary of the models used, the fine-tunning applied and the overall res
 
 * Bone Fracture Classification - Maximum Accuracy reached: 81%
 * Increase the model capability introducing object detection
- 
+
+
+References in the slides.
