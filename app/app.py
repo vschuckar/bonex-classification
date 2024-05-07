@@ -9,8 +9,8 @@ import pandas as pd
 model_url = 'https://raw.githubusercontent.com/vschuckar/bonex-classification/main/models/best_model_-10.h5'
 model = app_function.load_cached_model(model_url)
 
-image_path = os.path.join(os.path.dirname(__file__), 'analytica.png')
-st.sidebar.image(image_path, use_column_width=True)
+image_url = 'https://github.com/vschuckar/bonex-classification/blob/main/app/analytica.png'
+st.sidebar.image(image_url, use_column_width=True)
 st.sidebar.title("boneX")
 st.sidebar.subheader("The newest Image Analytica product!")
 
