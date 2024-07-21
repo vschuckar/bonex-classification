@@ -2,15 +2,14 @@ import streamlit as st
 from PIL import Image
 import app_function
 import time
-import os
 import altair as alt
 import pandas as pd
 
-model_url = 'https://raw.githubusercontent.com/vschuckar/bonex-classification/main/models/best_model_-10.h5'
+model_url = 'https://drive.google.com/uc?export=download&id=1QUwapqsSqqP_J4sw_Smngz8Lt73Zt6Nn'
 model = app_function.load_cached_model(model_url)
 
-image_path = os.path.join(os.path.dirname(__file__), 'analytica.png')
-st.sidebar.image(image_path, use_column_width=True)
+image_url = 'https://github.com/vschuckar/bonex-classification/blob/main/app/analytica.png?raw=true'
+st.sidebar.image(image_url, use_column_width=True)
 st.sidebar.title("boneX")
 st.sidebar.subheader("The newest Image Analytica product!")
 
