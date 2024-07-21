@@ -151,7 +151,7 @@ def load_cached_model(model_url):
 
 # function to get an image, transform it to array and RGB (if necessary), preprocess, apply the model and predict the results
 
-def xray_image(img):
+def xray_image(img, model):
     '''
     This is a function to get an image, transform it to array and RGB (if necessary), preprocess, apply the model 
     and make predictions. 
@@ -160,15 +160,18 @@ def xray_image(img):
     '''
     img_array = image.img_to_array(img)
 
+    # If the image is grayscale, convert it to RGB by repeating the channels
     if img_array.shape[-1] == 1:
         img_array = np.repeat(img_array, 3, axis=-1)
         
-    img_array = np.expand_dims(image.img_to_array(img_array), axis=0)
+    # Preprocess the image for the model
+    img_array = np.expand_dims(img_array, axis=0)
     img_array = preprocess_input(img_array)
 
-    model = load_model('models/best_model_-10.h5')
+    # Make predictions using the model
     predictions = model.predict(img_array)
 
+    # Define the labels
     labels = ['Elbow fracture', 'Fingers fracture', 'Forearm fracture', 'Wrist fracture', 'Humerus Fracture', 'Shoulder fracture']
 
     return dict(zip(labels, predictions[0]))
