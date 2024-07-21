@@ -9,16 +9,16 @@ from tensorflow.keras.preprocessing import image
 from tensorflow.keras.applications.inception_v3 import preprocess_input
 
 # function to load a cached model to avoid loading the model every time the app is being used 
+
 @st.cache_resource
 def load_cached_model(model_url):
-    try:
-        response = requests.get(model_url)
-        response.raise_for_status()
-        model_content = BytesIO(response.content)
-        return load_model(model_content)
-    except requests.exceptions.RequestException as e:
-        st.error(f"Failed to load the model: {e}")
-        return None
+    response = requests.get(model_url)
+    response.raise_for_status()
+    model_content = BytesIO(response.content)
+    return load_model(model_content)
+
+model_url = 'https://drive.google.com/file/d/1QUwapqsSqqP_J4sw_Smngz8Lt73Zt6Nn/view?usp=drive_link'
+model = load_cached_model(model_url)
 
 # function to get an image, transform it to array and RGB (if necessary), preprocess, apply the model and predict the results
 
