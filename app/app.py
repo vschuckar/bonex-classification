@@ -5,7 +5,7 @@ import time
 import altair as alt
 import pandas as pd
 
-model_url = 'https://raw.githubusercontent.com/vschuckar/bonex-classification/main/models/best_model_-10.h5'
+model_url = 'https://drive.google.com/file/d/1QUwapqsSqqP_J4sw_Smngz8Lt73Zt6Nn/view?usp=drive_link'
 model = app_function.load_cached_model(model_url)
 
 image_url = 'https://github.com/vschuckar/bonex-classification/blob/main/app/analytica.png?raw=true'
