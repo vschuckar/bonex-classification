@@ -17,9 +17,6 @@ def load_cached_model(model_url):
     model_content = BytesIO(response.content)
     return load_model(model_content)
 
-model_url = 'https://drive.google.com/file/d/1QUwapqsSqqP_J4sw_Smngz8Lt73Zt6Nn/view?usp=drive_link'
-model = load_cached_model(model_url)
-
 # function to get an image, transform it to array and RGB (if necessary), preprocess, apply the model and predict the results
 
 def xray_image(img, model):
