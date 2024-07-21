@@ -4,8 +4,9 @@ import app_function
 import time
 import altair as alt
 import pandas as pd
+'https://drive.google.com/uc?export=download&id=1QUwapqsSqqP_J4sw_Smngz8Lt73Zt6Nn'
 
-model_url = 'https://drive.google.com/file/d/1QUwapqsSqqP_J4sw_Smngz8Lt73Zt6Nn/view?usp=drive_link'
+model_url = 'https://drive.google.com/uc?export=download&id=1QUwapqsSqqP_J4sw_Smngz8Lt73Zt6Nn'
 model = app_function.load_cached_model(model_url)
 
 image_url = 'https://github.com/vschuckar/bonex-classification/blob/main/app/analytica.png?raw=true'
